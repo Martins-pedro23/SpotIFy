@@ -10,7 +10,7 @@ import com.spotify.models.UserModel;
 public class UpdateUserUseCase {
     public static void updateUser(UserModel user) {
         try{
-            String sql = "UPDATE users SET name = ?, email = ?, password = ?, birth_date = ?, favorite_genres = ? WHERE id = ?";
+            String sql = "UPDATE User SET name = ?, email = ?, password = ?, birth_date = ?, favorite_genres = ? WHERE id = ?";
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, user.getName());

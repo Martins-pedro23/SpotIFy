@@ -9,7 +9,7 @@ import com.spotify.connection.ConnectionController;
 public class DeleteUserUseCase {
     public static void deleteUser(int id) {
         try{
-            String sql = "DELETE FROM users WHERE id = ?";
+            String sql = "DELETE FROM User WHERE id = ?";
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);

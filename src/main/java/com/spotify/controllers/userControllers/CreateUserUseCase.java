@@ -10,7 +10,12 @@ import com.spotify.models.UserModel;
 public class CreateUserUseCase {
     public static UserModel handle(UserModel user) {
         try{
-            String sql = "INSERT INTO users (name, email, password, birth_date, favorite_genres) VALUES (?, ?, ?, ?, ?)";
+            System.out.println(user.getBirth_date().toString());
+            System.out.println(user.getFavorite_genres().toString());
+            System.out.println(user.getName());
+            System.out.println(user.getEmail());
+            System.out.println(user.getPassword());
+            String sql = "INSERT INTO User (name, email, password, birth_date, favorite_genres) VALUES (?, ?, ?, ?, ?)";
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, user.getName());

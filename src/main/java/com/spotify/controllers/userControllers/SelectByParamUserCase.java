@@ -15,7 +15,7 @@ public class SelectByParamUserCase {
     public static ArrayList<UserModel> handle(UserSearchParam param, String value){
         ArrayList<UserModel> users = new ArrayList<UserModel>(); 
         try{
-            String sql = "SELECT * FROM users WHERE " + param.getParam() + " = ?";
+            String sql = "SELECT * FROM User WHERE " + param.getParam() + " = ?";
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, value);

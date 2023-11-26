@@ -50,15 +50,21 @@ public class UserModel extends IUser {
     }
 
     public void setName(String name) {
+        
+
         this.name = name;
     }
 
 
     public void setEmail(String email) {
+        
+
         this.email = email;
     }
 
     public void setBirth_date(String birth_date) {
+        
+
         this.birth_date = birth_date;
     }
 
@@ -67,6 +73,8 @@ public class UserModel extends IUser {
     }
 
     public void setPassword(String password) {
+
+
         this.password = password;
     }
 }

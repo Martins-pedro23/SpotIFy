@@ -1,0 +1,32 @@
+.body{
+    -fx-background-color: #1c1c1c;
+    -fx-alignment: center;
+    -fx-width: 720px;
+    -fx-height: 480px;
+}
+
+.h1{
+    -fx-font-size: 50px;
+    -fx-text-fill: #ffffff;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
+
+.logo{
+    -fx-: center;
+}
+
+.form{
+    -fx-alignment: center;
+    
+}
+
+.input{
+    -fx-padding: 50px 0 0 0;
+    -fx-width: 300px;
+}
+
+.button{
+    -fx-margin: 20px 0 0 0;
+    -fx-background-color: #1c1c1c
+}
