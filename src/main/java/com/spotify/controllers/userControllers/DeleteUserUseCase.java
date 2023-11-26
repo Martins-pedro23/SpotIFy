@@ -1,4 +1,4 @@
-package com.spotify.controllers.userController;
+package com.spotify.controllers.userControllers;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

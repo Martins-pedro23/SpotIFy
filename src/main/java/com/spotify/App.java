@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import com.spotify.controllers.userController.SelectAllUsersUseCase;
+import com.spotify.controllers.userControllers.SelectAllUsersUseCase;
 import com.spotify.models.UserModel;
 import java.util.ArrayList;
 
@@ -21,7 +21,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("login"));
         stage.setScene(scene);
         stage.show();
     }
@@ -35,7 +35,7 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    
+
     public static void main(String[] args) {
         ArrayList<UserModel> userModel = SelectAllUsersUseCase.handle();
         for(int i = 0; i < userModel.size(); i++){
