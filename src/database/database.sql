@@ -46,8 +46,8 @@ CREATE TABLE Playlist (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     user_id INT,
-    duration TIME,
-    songs VARCHAR(255) NOT NULL,
+    bio TEXT,
+    songs_id TEXT,
     likes INT,
     FOREIGN KEY (user_id) REFERENCES User(id)
 );

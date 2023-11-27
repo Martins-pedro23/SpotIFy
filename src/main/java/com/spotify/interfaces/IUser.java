@@ -1,6 +1,6 @@
 package com.spotify.interfaces;
 
-public class IUser {
+public abstract class IUser {
     String name;
     String email;
     String password;

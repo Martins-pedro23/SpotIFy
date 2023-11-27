@@ -1,6 +1,6 @@
 package com.spotify.interfaces;
 
-public class IArtist {
+public abstract class IArtist {
     String name;
     int viwe_count;
     String bio;
