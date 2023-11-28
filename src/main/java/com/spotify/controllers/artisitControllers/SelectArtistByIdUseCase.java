@@ -4,23 +4,22 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import com.spotify.connection.ConnectionController;
 import com.spotify.models.ArtistModel;
-import com.spotify.enums.ArtistSearchParam;
 
-public class SelectArtistByParam {
-    public static ArrayList<ArtistModel> handle(ArtistSearchParam param, String value){
+
+public class SelectArtistByIdUseCase {
+    public static ArtistModel handle(int id){
         try{
-            ArrayList<ArtistModel> artists = new ArrayList<ArtistModel>();
-            String sql = "SELECT * FROM Artist WHERE " + param.toString() + " = ?";
+            String sql = "SELECT * FROM Artist WHERE id = ?";
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, value);
+            preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next()){
-                int id = resultSet.getInt("id");
+            if(resultSet.next()){
+                System.out.println("Found artist with id: " + id);
+                System.out.println("Name: " + resultSet.getString("name"));
                 String name = resultSet.getString("name");
                 int view_count = resultSet.getInt("view_count");
                 String bio = resultSet.getString("bio");
@@ -28,12 +27,12 @@ public class SelectArtistByParam {
                 String[] genre = resultSet.getString("genre").split(";");
                 ArtistModel artist = new ArtistModel(name, view_count, bio, verified, genre);
                 artist.setId(id);
-                artists.add(artist);
+                return artist;
+            }else{
+                throw new SQLException("No artist with id: " + id);
             }
-            return artists;
         }catch(SQLException e){
-            System.out.println("Error: " + e.getMessage());
-            return null;
+            throw new RuntimeException("Error: " + e.getMessage());
         }
     }
 }

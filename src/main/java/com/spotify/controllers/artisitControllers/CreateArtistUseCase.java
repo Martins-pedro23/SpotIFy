@@ -11,11 +11,11 @@ import com.spotify.models.ArtistModel;
 public class CreateArtistUseCase {
     public static ArtistModel handle(ArtistModel artist){
         try{
-            String sql = "INSERT INTO Artist (name, viwe_count, bio, verified, genre) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO Artist (name, view_count, bio, verified, genre) VALUES (?, ?, ?, ?, ?)";
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, artist.getName());
-            preparedStatement.setInt(2, artist.getViwe_count());
+            preparedStatement.setInt(2, artist.getView_count());
             preparedStatement.setString(3, artist.getBio());
             preparedStatement.setBoolean(4, artist.isVerified());
             String genre = "";

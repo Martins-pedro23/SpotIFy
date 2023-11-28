@@ -8,54 +8,100 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
-<VBox prefHeight="720.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #1c1c1c;" styleClass="body" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spotify.RegisterController">
+<VBox prefHeight="720.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #1c1c1c;" styleClass="body" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spotify.ArtistVisualizationController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <children>
       <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #1c1c1c;">
         <items>
-            <Label text="Olá, Gustavo. " textFill="WHITE">
+          <Button mnemonicParsing="false" text="Perfil" />
+            <Button mnemonicParsing="false" text="Minhas playlists" />
+            <Button mnemonicParsing="false" text="Procurar" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="71.0" text="Olá,  " textAlignment="RIGHT" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-          <Button mnemonicParsing="false" text="Perfil" />
-            <Button mnemonicParsing="false" text="Minhas playlists" />
-            <Button mnemonicParsing="false" text="Procurar" />
+            <Label fx:id="userName" prefHeight="27.0" prefWidth="655.0" text="nome" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
         </items>
       </ToolBar>
-      <Label text="Informações sobre o(a) artista: Taylor Swift" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="Nome: Taylor Switft" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="Numero de visualizações: 100.000.000" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="Biografia: Foda d+" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="Verificado: Sim" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="Idade: 95" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
+      <TextFlow prefHeight="28.0" prefWidth="1240.0">
+         <children>
+            <Label text="Informações sobre o(a) artista: " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="artistName" prefHeight="27.0" prefWidth="469.0" text="nome" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow prefHeight="28.0" prefWidth="1240.0">
+         <children>
+            <Label text="Numero de visualizações: " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="artistViews" prefHeight="27.0" prefWidth="469.0" text="numero" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow prefHeight="28.0" prefWidth="1240.0">
+         <children>
+            <Label text="Biografia: " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="artistBio" prefHeight="27.0" prefWidth="884.0" text="biooo" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow prefHeight="28.0" prefWidth="1240.0">
+         <children>
+            <Label text="Verificado: " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="artistVerification" prefHeight="27.0" prefWidth="884.0" text="Sim" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow prefHeight="28.0" prefWidth="1240.0">
+         <children>
+            <Label text="Genêro musical: " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="artistGenre" prefHeight="27.0" prefWidth="884.0" text="Sim" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
       <Separator prefHeight="20.0" prefWidth="1240.0" />
       <Label text="Músicas:" textFill="WHITE">
          <font>

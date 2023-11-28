@@ -5,17 +5,17 @@ import com.spotify.interfaces.IArtist;
 public class ArtistModel extends IArtist {
     private int id;
     private String name;
-    private int viwe_count;
+    private int view_count;
     private String bio;
     private boolean verified;
     private String[] genre;
 
-    public ArtistModel(String name, int viwe_count, String bio, boolean verified, String[] genre) {
+    public ArtistModel(String name, int view_count, String bio, boolean verified, String[] genre) {
         this.setBio(bio);
         this.setGenre(genre);
         this.setName(name);
         this.setVerified(verified);
-        this.setViwe_count(viwe_count);
+        this.setView_count(view_count);
     }
 
     public ArtistModel() {
@@ -25,8 +25,8 @@ public class ArtistModel extends IArtist {
         return name;
     }
 
-    public int getViwe_count() {
-        return viwe_count;
+    public int getView_count() {
+        return view_count;
     }
 
     public String getBio() {
@@ -53,8 +53,8 @@ public class ArtistModel extends IArtist {
         this.name = name;
     }
 
-    public void setViwe_count(int viwe_count) {
-        this.viwe_count = viwe_count;
+    public void setView_count(int view_count) {
+        this.view_count = view_count;
     }
 
     public void setBio(String bio) {

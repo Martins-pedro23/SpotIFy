@@ -21,11 +21,11 @@ public class SelectAllUsersUseCase {
             while(resultSet.next()){
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                int viwe_count = resultSet.getInt("viwe_count");
+                int view_count = resultSet.getInt("view_count");
                 String bio = resultSet.getString("bio");
                 boolean verified = resultSet.getBoolean("verified");
                 String[] genre = resultSet.getString("genre").split(";");
-                ArtistModel artist = new ArtistModel(name, viwe_count, bio, verified, genre);
+                ArtistModel artist = new ArtistModel(name, view_count, bio, verified, genre);
                 artist.setId(id);
                 artists.add(artist);
             }
