@@ -27,7 +27,7 @@ public class ArtistVisualizationController implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ArtistModel artist = SelectArtistByIdUseCase.handle(1);
+        ArtistModel artist = SelectArtistByIdUseCase.handle(3);
         System.out.println(artist.getName());
         setData(artist);
     } 
