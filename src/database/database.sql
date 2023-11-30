@@ -25,8 +25,7 @@ CREATE TABLE Songs (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     listener_count INT,
-    artists VARCHAR(255) NOT NULL,
-    album VARCHAR(255),
+    album_id VARCHAR(255),
     duration TIME,
     artist_id INT,
     FOREIGN KEY (artist_id) REFERENCES Artist(id)
