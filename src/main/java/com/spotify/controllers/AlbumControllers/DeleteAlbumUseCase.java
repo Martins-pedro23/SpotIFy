@@ -1,4 +1,4 @@
-package com.spotify.controllers.playlistControllers;
+package com.spotify.controllers.AlbumControllers;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,10 +6,10 @@ import java.sql.SQLException;
 
 import com.spotify.connection.ConnectionController;
 
-public class DeletePlaylistController {
+public class DeleteAlbumUseCase {
     public static boolean handle(int id){
         try{
-            String sql = "DELETE FROM Playlist WHERE id = ?";
+            String sql = "DELETE FROM Album WHERE id = ?";
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);

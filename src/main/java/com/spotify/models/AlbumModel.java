@@ -7,10 +7,10 @@ public class AlbumModel extends IAlbum {
     String name;
     int artistId;
     int year;
-    String songs;
+    int[] songs;
     int listener_count;
 
-    public AlbumModel(String name, int artistId, int year, String songs, int listener_count) {
+    public AlbumModel(String name, int artistId, int year, int[] songs, int listener_count) {
         this.name = name;
         this.artistId = artistId;
         this.year = year;
@@ -18,7 +18,7 @@ public class AlbumModel extends IAlbum {
         this.listener_count = listener_count;
     }
 
-    public AlbumModel(int id, String name, int artistId, int year, String songs, int listener_count) {
+    public AlbumModel(int id, String name, int artistId, int year, int[] songs, int listener_count) {
         this.id = id;
         this.name = name;
         this.artistId = artistId;
@@ -46,7 +46,7 @@ public class AlbumModel extends IAlbum {
         return year;
     }
 
-    public String getSongs() {
+    public int[] getSongs() {
         return songs;
     }
 
@@ -66,7 +66,7 @@ public class AlbumModel extends IAlbum {
         this.year = year;
     }
 
-    public void setSongs(String songs) {
+    public void setSongs(int[] songs) {
         this.songs = songs;
     }
 

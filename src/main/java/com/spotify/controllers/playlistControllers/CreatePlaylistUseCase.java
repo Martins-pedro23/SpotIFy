@@ -7,12 +7,16 @@ import java.sql.SQLException;
 import com.spotify.connection.ConnectionController;
 import com.spotify.models.PlaylistModel;
 
-public class AddMusicToPlaylistController {
+public class CreatePlaylistUseCase {
+    
     public static boolean handle(PlaylistModel playlist){
         try{
-            String sql = "UPDATE Playlist SET songs_id = ? WHERE id = ?";
+            String sql = "INSERT INTO Playlist (name, user_id, bio, songs_id, likes) VALUES (?, ?, ?, ?)";
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, playlist.getName());
+            preparedStatement.setInt(2, playlist.getUser_id());
+            preparedStatement.setString(3, playlist.getBio());
             String songs_id = "";
             for(int i = 0; i < playlist.getSongs_id().length; i++){
                 songs_id += playlist.getSongs_id()[i];
@@ -20,8 +24,8 @@ public class AddMusicToPlaylistController {
                     songs_id += ";";
                 }
             }
-            preparedStatement.setString(1, songs_id);
-            preparedStatement.setInt(2, playlist.getId());
+            preparedStatement.setString(4, songs_id);
+            preparedStatement.setInt(5, playlist.getLikes());
             preparedStatement.executeUpdate();
             return true;
         }catch(SQLException e){
