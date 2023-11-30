@@ -6,7 +6,8 @@ public enum AlbumSearchParam {
     ARTIST_ID("artist_id"),
     YEAR("year"),
     SONGS("songs"),
-    LISTENER_COUNT("listener_count"),
+    LISTENERCOUNT("listener_count");
+
     
     private String param;
 

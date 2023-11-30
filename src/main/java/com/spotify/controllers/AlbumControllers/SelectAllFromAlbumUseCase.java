@@ -22,10 +22,15 @@ public class SelectAllFromAlbumUseCase {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 int artist_id = resultSet.getInt("artist_id");
-                int release_year = resultSet.getInt("release_year");
-                int view_count = resultSet.getInt("view_count");
-                String[] genre = resultSet.getString("genre").split(";");
-                AlbumModel album = new AlbumModel(id, name, artist_id, release_year, view_count, genre);
+                int year = resultSet.getInt("year");
+                String song = resultSet.getString("songs");
+                String[] songs = song.split(";");
+                int[] songsID = new int[songs.length];
+                for(int i = 0; i < songs.length; i++){
+                    songsID[i] = Integer.parseInt(songs[i]);
+                }
+                int listener_count = resultSet.getInt("listener_count");
+                AlbumModel album = new AlbumModel(id, name, artist_id, year, songsID, listener_count);
                 albums.add(album);
             }
             return albums;
