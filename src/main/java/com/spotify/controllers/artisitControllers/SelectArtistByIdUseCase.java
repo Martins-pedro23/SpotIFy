@@ -25,8 +25,7 @@ public class SelectArtistByIdUseCase {
                 String bio = resultSet.getString("bio");
                 boolean verified = resultSet.getBoolean("verified");
                 String[] genre = resultSet.getString("genre").split(";");
-                ArtistModel artist = new ArtistModel(name, view_count, bio, verified, genre);
-                artist.setId(id);
+                ArtistModel artist = new ArtistModel(id, name, view_count, bio, verified, genre);
                 return artist;
             }else{
                 throw new SQLException("No artist with id: " + id);

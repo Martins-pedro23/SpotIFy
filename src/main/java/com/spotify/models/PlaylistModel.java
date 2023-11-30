@@ -18,6 +18,15 @@ public class PlaylistModel extends IPlaylist {
         this.setUser_id(user_id);
     }
 
+    public PlaylistModel(int id, String name, String bio, int[] songs_id, int likes, int user_id) {
+        this.setId(id);
+        this.setName(name); 
+        this.setBio(bio);
+        this.setSongs_id(songs_id);
+        this.setLikes(likes);
+        this.setUser_id(user_id);
+    }
+
     public PlaylistModel() {
     }
 

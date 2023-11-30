@@ -27,8 +27,7 @@ public class SelectByParamUserCase {
                 String password = resultSet.getString("password");
                 String birth_date = resultSet.getString("birth_date");
                 String[] favorite_genres = resultSet.getString("favorite_genres").split(";");
-                UserModel user = new UserModel(name, email, password, birth_date, favorite_genres);
-                user.setId(id);
+                UserModel user = new UserModel(id, name, email, password, birth_date, favorite_genres);
                 users.add(user);
             }
         }catch(SQLException e){

@@ -18,6 +18,15 @@ public class ArtistModel extends IArtist {
         this.setView_count(view_count);
     }
 
+    public ArtistModel(int id, String name, int view_count, String bio, boolean verified, String[] genre) {
+        this.setId(id);
+        this.setBio(bio);
+        this.setGenre(genre);
+        this.setName(name);
+        this.setVerified(verified);
+        this.setView_count(view_count);
+    }
+
     public ArtistModel() {
     }
 

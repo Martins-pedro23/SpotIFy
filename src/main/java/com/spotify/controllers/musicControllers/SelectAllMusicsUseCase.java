@@ -29,13 +29,7 @@ public class SelectAllMusicsUseCase {
                 int album_id = resultSet.getInt("album_id");
                 int duration = resultSet.getInt("duration");
                 int artist_id = resultSet.getInt("artist_id");
-                MusicModel music = new MusicModel();
-                music.setName(name);
-                music.setListenerCount(listener_count);
-                music.setAlbumId(album_id);
-                music.setDuration(duration);
-                music.setArtistId(artist_id);
-                music.setId(id);
+                MusicModel music = new MusicModel(id, name, listener_count, album_id, duration, artist_id);
                 musics[i] = music;
                 i++;
             }

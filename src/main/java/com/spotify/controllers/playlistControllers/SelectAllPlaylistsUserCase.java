@@ -28,13 +28,7 @@ public class SelectAllPlaylistsUserCase {
                 for(int i = 0; i < songs_id.length; i++){
                     songs_id_int[i] = Integer.parseInt(songs_id[i]);
                 }
-                PlaylistModel playlist = new PlaylistModel();
-                playlist.setId(id);
-                playlist.setName(name);
-                playlist.setBio(bio);
-                playlist.setUser_id(user_id);
-                playlist.setLikes(likes);
-                playlist.setSongs_id(songs_id_int);
+                PlaylistModel playlist = new PlaylistModel(id, name, bio, songs_id_int, likes, user_id);
                 playlists.add(playlist);
             }
             return playlists;

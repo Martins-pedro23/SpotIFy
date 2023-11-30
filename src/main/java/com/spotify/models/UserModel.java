@@ -18,6 +18,15 @@ public class UserModel extends IUser {
         this.setPassword(password);
     }
 
+    public UserModel(int id, String name, String email, String password, String birth_date, String[] favorite_genres) {
+        this.setId(id);
+        this.setBirth_date(birth_date);
+        this.setEmail(email);
+        this.setFavorite_genres(favorite_genres);
+        this.setName(name);
+        this.setPassword(password);
+    }
+
     public UserModel() {
     }
 

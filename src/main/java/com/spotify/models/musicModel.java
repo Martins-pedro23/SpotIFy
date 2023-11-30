@@ -17,6 +17,15 @@ public class MusicModel extends IMusic {
         this.artistId = artistId;
     }
 
+    public MusicModel(int id, String name, int listenerCount, int albumId, int duration, int artistId) {
+        this.id = id;
+        this.name = name;
+        this.listenerCount = listenerCount;
+        this.albumId = albumId;
+        this.duration = duration;
+        this.artistId = artistId;
+    }
+
     public MusicModel() {
     }
 
