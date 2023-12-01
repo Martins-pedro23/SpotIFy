@@ -10,7 +10,7 @@ import com.spotify.models.MusicModel;
 public class CreateMusicUseCase {
     public static boolean handle(MusicModel music){
         try{
-            String sql = "INSERT INTO Music(name, listener_count, album_id, duration, artist_id) VALUES(?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO Songs(name, listener_count, album_id, duration, artist_id) VALUES(?, ?, ?, ?, ?)";
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, music.getName());

@@ -3,27 +3,32 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
-<VBox prefHeight="720.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #1c1c1c;" styleClass="body" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spotify.RegisterController">
+<VBox prefHeight="720.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #1c1c1c;" styleClass="body" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spotify.ProfileVisualizationController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <children>
       <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #1c1c1c;">
         <items>
-            <Label text="Olá, Gustavo. " textFill="WHITE">
+            <Label text="Olá," textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
+            <Label fx:id="userName" prefHeight="21.0" prefWidth="264.0" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#returnHome" text="Inicial" />
           <Button mnemonicParsing="false" text="Perfil" />
-            <Button mnemonicParsing="false" text="Minhas playlists" />
-            <Button mnemonicParsing="false" text="Procurar" />
+            <Button mnemonicParsing="false" onAction="#registerMusicPage" text="Cadastrar Musica" />
         </items>
       </ToolBar>
       <Label text="Informações: " textFill="WHITE">
@@ -31,32 +36,62 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label text="Nome: Gustavo" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="Email: gustavo@gmail.com" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="Idade: 16" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="Gênero preferido: Pop" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
+      <TextFlow prefHeight="17.0" prefWidth="1240.0">
+         <children>
+            <Label text="Nome" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="name" prefHeight="21.0" prefWidth="1153.0" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow prefHeight="25.0" prefWidth="1240.0">
+         <children>
+            <Label text="Email:" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="email" prefHeight="21.0" prefWidth="1168.0" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow prefHeight="11.0" prefWidth="1240.0">
+         <children>
+            <Label text="Idade:" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="age" prefHeight="21.0" prefWidth="1167.0" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow prefHeight="16.0" prefWidth="1240.0">
+         <children>
+            <Label text="Gênero preferido:" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="gener" prefHeight="21.0" prefWidth="1064.0" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
       <Separator prefHeight="38.0" prefWidth="1240.0" />
-      <Label text="Playlists:" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <ListView prefHeight="200.0" prefWidth="200.0" />
    </children>
 </VBox>

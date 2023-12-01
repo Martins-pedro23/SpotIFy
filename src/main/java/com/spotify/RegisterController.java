@@ -46,6 +46,16 @@ public class RegisterController implements Initializable {
 
     @FXML
     private Button registerButton;
+    
+
+    @FXML
+    void loginButton(ActionEvent event) {
+        try{
+            App.setRoot("login");
+        }   catch(Exception e){
+            System.out.println("Error changing page");
+        }
+    }
 
     @FXML
     void register(ActionEvent event) {
@@ -60,6 +70,11 @@ public class RegisterController implements Initializable {
 
         if(result != null){
             System.out.println("User created");
+            try{
+                App.setRoot("login");
+            }   catch(Exception e){
+                System.out.println("Error changing page");
+            }
         }else{
             System.out.println("Error creating user");
         }

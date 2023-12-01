@@ -36,7 +36,7 @@ public class DeleteMusicUseCase {
                 }
             }
 
-            sql = "DELETE FROM Music WHERE id = ?";
+            sql = "DELETE FROM Songs WHERE id = ?";
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();

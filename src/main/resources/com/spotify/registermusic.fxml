@@ -2,8 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -11,11 +9,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<VBox prefHeight="720.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #1c1c1c;" styleClass="body" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spotify.RegisterController">
+<VBox prefHeight="720.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #1c1c1c;" styleClass="body" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spotify.RegisterMusicController">
    <children>
       <TextFlow prefHeight="79.0" prefWidth="615.0" style="-fx-background-color: transparant;" styleClass="button" textAlignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="95.0" prefWidth="1256.0" styleClass="h1" text="Crie sua conta" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="95.0" prefWidth="1256.0" styleClass="h1" text="Criar musica" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
                <font>
                   <Font size="71.0" />
                </font>
@@ -40,12 +38,12 @@
             </TextFlow>
             <TextFlow prefHeight="107.0" prefWidth="615.0" style="-fx-padding: 20px 0 0 0;" styleClass="input">
                <children>
-                  <Label text="Email" textFill="WHITE">
+                  <Label text="Tempo" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="email" prefHeight="46.0" prefWidth="606.0">
+                  <TextField fx:id="duration" prefHeight="46.0" prefWidth="606.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -54,36 +52,18 @@
             </TextFlow>
             <TextFlow prefHeight="73.0" prefWidth="616.0" style="-fx-padding: 20px 0 0 0;" styleClass="input">
                <children>
-                  <Label text="Senha" textFill="WHITE">
+                  <Label text="Id Artista" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="19.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="password" prefHeight="46.0" prefWidth="606.0" />
+                  <PasswordField fx:id="idArtist" prefHeight="46.0" prefWidth="606.0" />
                </children>
             </TextFlow>
             <TextFlow prefHeight="107.0" prefWidth="615.0" style="-fx-padding: 20px 0 0 0;" styleClass="input">
                <children>
-                  <VBox prefHeight="72.0" prefWidth="221.0" style="-fx-padding: 20px 0 0 0;">
-                     <children>
-                        <Label text="Genêro musical preferido" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <ChoiceBox fx:id="favorit_genre" prefHeight="25.0" prefWidth="218.0" />
-                     </children>
-                  </VBox>
-                  <VBox alignment="TOP_RIGHT" prefHeight="72.0" prefWidth="385.0" style="-fx-padding: 20px 0 0 100px;">
-                     <children>
-                        <Label prefHeight="27.0" prefWidth="220.0" text="Data de nascimento" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <DatePicker fx:id="birth_date" prefHeight="25.0" prefWidth="220.0" />
-                     </children>
-                  </VBox>
+                  <VBox prefHeight="72.0" prefWidth="221.0" style="-fx-padding: 20px 0 0 0;" />
+                  <VBox alignment="TOP_RIGHT" prefHeight="72.0" prefWidth="385.0" style="-fx-padding: 20px 0 0 100px;" />
                </children>
             </TextFlow>
             <TextFlow prefHeight="27.0" prefWidth="616.0" style="-fx-padding: 20px 0 0 0;" styleClass="input" />
@@ -93,7 +73,7 @@
          <children>
             <TextFlow prefHeight="69.0" prefWidth="616.0" style="-fx-background-color: transparent;" styleClass="button" textAlignment="CENTER">
                <children>
-                  <Button fx:id="registerButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#register" prefHeight="45.0" prefWidth="212.0" style="-fx-border-radius: 50px; -fx-background-color: #0DB145;" text="Criar conta" textFill="WHITE">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#createMusic" prefHeight="45.0" prefWidth="212.0" style="-fx-border-radius: 50px; -fx-background-color: #0DB145;" text="Criar musica" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
@@ -102,7 +82,7 @@
             </TextFlow>
             <TextFlow prefHeight="48.0" prefWidth="615.0" style="-fx-background-color: transparant;" styleClass="button" textAlignment="CENTER">
                <children>
-                  <Button fx:id="loginButton" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" style="-fx-background-color: #1c1c1c;" text="entrar" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="returnButton" mnemonicParsing="false" onAction="#returnButton" prefHeight="33.0" prefWidth="98.0" style="-fx-background-color: #1c1c1c;" text="Voltar" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>

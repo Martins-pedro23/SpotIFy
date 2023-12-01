@@ -61,7 +61,7 @@
             </TextFlow>
             <TextFlow prefHeight="48.0" prefWidth="615.0" style="-fx-background-color: transparant;" styleClass="button" textAlignment="CENTER">
                <children>
-                  <Button fx:id="registerButton" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" style="-fx-background-color: #1c1c1c;" text="Criar conta" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="registerButton" mnemonicParsing="false" onAction="#registerButton" prefHeight="33.0" prefWidth="98.0" style="-fx-background-color: #1c1c1c;" text="Criar conta" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>

@@ -10,7 +10,7 @@ import com.spotify.models.ArtistModel;
 
 import java.util.ArrayList;
 
-public class SelectAllUsersUseCase {
+public class SelectAllArtistUseCase {
     public static ArrayList<ArtistModel> handle(){
         try{
             ArrayList<ArtistModel> artists = new ArrayList<ArtistModel>();
