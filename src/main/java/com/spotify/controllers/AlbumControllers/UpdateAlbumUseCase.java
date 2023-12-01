@@ -7,10 +7,10 @@ import java.sql.SQLException;
 import com.spotify.connection.ConnectionController;
 import com.spotify.models.AlbumModel;
 
-public class CreateAlbumController {
+public class UpdateAlbumUseCase {
     public static boolean handle(AlbumModel album){
         try{
-            String sql = "INSERT INTO Album(name, artist_id, year, songs_id, listener_count) VALUES(?, ?, ?, ?, ?)";
+            String sql = "UPDATE Album SET name = ?, artist_id = ?, year = ?, songs = ?, listener_count = ? WHERE id = ?";
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, album.getName());
@@ -25,6 +25,7 @@ public class CreateAlbumController {
             }
             preparedStatement.setString(4, songs);
             preparedStatement.setInt(5, album.getListener_count());
+            preparedStatement.setInt(6, album.getId());
             preparedStatement.executeUpdate();
             return true;
         }catch(SQLException e){

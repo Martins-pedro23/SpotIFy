@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 import com.spotify.controllers.userControllers.SelectAllUsersUseCase;
 import com.spotify.models.UserModel;
 import java.util.ArrayList;
@@ -72,8 +73,6 @@ public class App extends Application {
         notifyAllListeners(screen, null, null);
     }
 
-    //--
-
     private static ArrayList<OnChangeScreen> listeners = new ArrayList<>();
 
     public static interface OnChangeScreen {
@@ -89,5 +88,4 @@ public class App extends Application {
             l.onScreenChanged(newScreen, userData, aditionalData);
         }
     }
-
 }
