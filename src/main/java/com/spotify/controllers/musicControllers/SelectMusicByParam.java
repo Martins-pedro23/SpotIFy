@@ -17,10 +17,11 @@ public class SelectMusicByParam {
     public static ArrayList<MusicModel> handle(MusicSearchParam param, String value){
         try{
             ArrayList<MusicModel> musics = new ArrayList<MusicModel>();
-            String sql = "SELECT * FROM Songs WHERE " + param + " = ?";
+            String sql = "SELECT * FROM Songs WHERE " + param + " LIKE ?";
 
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            value = "%" + value + "%";
             preparedStatement.setString(1, value);
             ResultSet resultSet = preparedStatement.executeQuery();
             

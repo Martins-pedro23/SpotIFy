@@ -14,9 +14,10 @@ public class SelectArtistByParam {
     public static ArrayList<ArtistModel> handle(ArtistSearchParam param, String value){
         try{
             ArrayList<ArtistModel> artists = new ArrayList<ArtistModel>();
-            String sql = "SELECT * FROM Artist WHERE " + param.toString() + " = ?";
+            String sql = "SELECT * FROM Artist WHERE " + param.toString() + " LIKE ?";
             Connection connection = ConnectionController.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            value = "%" + value + "%";
             preparedStatement.setString(1, value);
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
